@@ -1,0 +1,53 @@
+ 
+1.处理一个数字的每一位
+给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
+include "stdio.h" 
+ include "conio.h" 
+ 
+main( ) 
+ 
+{ 
+ 
+  long a,b,c,d,e,x; 
+  printf("Please input a number:\n");
+ 
+  scanf("%ld",&x); 
+ 
+  a=x/10000;
+
+ 
+  b=x%10000/1000;
+
+ 
+  c=x%1000/100;
+ 
+  d=x%100/10;
+ 
+  e=x%10;
+printf("Output:\n");
+  if (a!=0) printf("there are 5, %ld %ld %ld %ld %ld\n",e,d,c,b,a); 
+ 
+  else if (b!=0) printf("there are 4, %ld %ld %ld %ld\n",e,d,c,b); 
+ 
+    else if (c!=0) printf(" there are 3,%ld %ld %ld\n",e,d,c); 
+ 
+      else if (d!=0) printf("there are 2, %ld %ld\n",e,d); 
+ 
+        else if (e!=0) printf(" there are 1,%ld\n",e); 
+ 
+ 
+ 
+}
+2.输入：数字双精度num和n。&nbsp;&nbsp;num是被四舍五入的数，n是保留的小数位数(n;=0)
+#include<stdio.h>
+ 
+int main()
+{
+	double num;
+	int n;
+	printf("Please input num and n: \n");
+	scanf("%lf,%d",&num,&n);
+	printf("Output:\n");
+	printf("%.*f\n",n,num);
+	return 0;
+}

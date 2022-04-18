@@ -1,0 +1,463 @@
+1.阶段八文件综合：LB8203
+
+FILE*fp;
+	int a[100]={1,1};
+	int i;
+	fp=fopen(str,"wb");
+	for(i=2;i<n;i++)
+	{
+		a[i]=a[i-1]+a[i-2];
+	}
+	for(i=0;i<n;i++)
+	{
+		fwrite(&a[i],sizeof(a[i]),1,fp);
+	}
+	fclose(fp);
+2.阶段7结构体：LB7102
+int main(void)
+{
+	struct
+	{
+		int number;
+		char name[20];
+		int age;
+		double score;
+	}st1;
+	printf("Input the info:\n");
+	scanf("%d %s %d %lf",&st1.number,st1.name,&st1.age,&st1.score);
+
+
+3.jieduan7：LB7201
+int main(void)
+{
+	struct
+	{
+		int number;
+		char name[20];
+		double prize;
+	}em[50];
+	int i,n;
+	printf("Input the number(<50):\n");
+	scanf("%d",&n);
+	printf("Input the info:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d %s %lf",&em[i].number,em[i].name,&em[i].prize);
+	}
+
+4.LB7202
+int No;
+char name[20];
+int count;
+};
+int main(void)
+{
+	struct animal ani[50];
+	int i,n;
+	printf("Input the number(<50):\n");
+	scanf("%d",&n);
+	printf("Input the info:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d %s %d",&ani[i].No,ani[i].name,&ani[i].count);
+	}
+
+5.LB7101
+struct student
+{
+	int number;
+	char name[20];
+	int age;
+	double score;
+};
+
+printf("number:%d\n",st1.number);
+printf("name:%s\n",st1.name);
+printf("age:%d\n",st1.age);
+printf("score:%.2f\n",st1.score);
+
+
+6.WW6201
+int swap(int*a,int*b);
+
+int swap(int*a,int*b)
+{
+int c;
+c=*a;
+*a=*b;
+*b=c;
+return 0;
+}
+
+7.WW6102
+
+if(*p1<*p2)
+{
+p=p1;
+p1=p2;
+
+8.WW6101
+
+int a,b;
+    int *pointer_1;
+	int *pointer_2;
+	pointer_1=&a;
+	pointer_2=&b;
+	printf("please enter a and b:");
+	scanf("%d,%d",&a,&b);
+
+
+9.WW6105
+
+p=a;
+	for(i=0;i<5;p++)
+
+10.WW6104
+
+a=(int*)malloc(5);
+
+scanf("%d",a+i);
+
+printf("%d ",*(a+i));
+
+11.cxy6201
+
+ PArray=malloc(100);
+	for(i=0;i<Total;i++)
+	{
+		scanf("%d",(PArray+i));
+	}
+	printf("output:\n");
+	printf("数组的元素和是:%d",Calc(PArray,Total));
+	
+
+for(i=0;i<Num;i++)
+	{
+		Sum+=*(PA+i);
+	}
+	return Sum;
+
+12.WW6106
+
+for(i=0;a[i]!='\0';i++)
+{
+b[i]=a[i];
+}
+b[i]='\0';
+
+13.指针综合程序LB6201
+
+fun(&Sum,n);
+
+*sn=Sum;
+
+14.WW6206
+
+str1=(char*)malloc(30);
+	str2=(char*)malloc(30);
+
+for(;*from!='\0';)
+	{
+		*to=*from;
+		from++;
+		to++;
+	}
+
+16.WW6204
+
+p-=5;
+
+int tmp;
+ int i, j = n - 1;
+ for (i = 0; i < j; i++) {
+ tmp = *(x+i);
+ *(x+i) = *(x+j);
+ *(x+j) = tmp;
+ j--;
+ }
+
+17.WW6203
+
+int i,j,tmp;
+for(i=0,j=n-1;i<j;i++,j--)
+{
+	tmp=*(x+i);
+	*(x+i)=*(x+j);
+	*(x+j)=tmp;
+}
+
+18.WW6202
+
+int i,j,tmp;
+for(i=0,j=n-1;i<j;i++,j--)
+{
+	tmp=*(x+i);
+	*(x+i)=*(x+j);
+	*(x+j)=tmp;
+}
+
+19.WW6205
+copy_string(a,b);
+
+for(;*from!='\0';)
+{
+	*to=*from;
+	to++;
+	from++;
+}
+*to='\0';
+
+
+20.LB6101
+
+void fun(int*a,int*b);
+
+void fun(int*a,int*b)
+{
+	int max,min;
+	max=(*a>*b)?*a:*b;
+	min=(*a>*b)?*b:*a;
+	printf("max=%d,min=%d\n",max,min);
+}
+
+21.LB6102
+
+void swap(int*a,int*b);
+
+void swap(int*a,int*b)
+{
+	int tmp;
+	tmp=*a;
+	*a=*b;
+	*b=tmp;
+}
+
+22.阶段5
+cxy5201
+
+Result[0]=Compare(Number1,Number2,GetMax);
+	Result[1]=Compare(Number1,Number2,GetMin);
+	Result[2]=Compare(Number1,Number2,GetAverage);
+
+
+return (*Fun)(x,y);
+
+23.wy5203
+
+void ReverseString(char a[]);
+
+void ReverseString(char a[])
+{
+	int i,j;
+	char tmp;
+	for(i=0,j=strlen(a)-1;i<j;i++,j--)
+	{
+		tmp=a[i];
+		a[i]=a[j];
+		a[j]=tmp;
+	}
+}
+
+24.D5201
+
+double fun(int a,int b,int c);
+
+double fun(int a,int b,int c)
+{
+	double p,mji;
+	p=(a+b+c)/2;
+	mji=sqrt(p*(p-a)*(p-b)*(p-c));
+	return mji;
+}
+
+25.LB5304
+
+double sub(int n,int x);
+
+	Pnx=sub(n,x);
+
+double sub(int n,int x)
+{
+	if(n==0)
+	{
+		return 1;
+	}
+	if(n==1)
+	{
+		return x;
+	}
+	else
+	{
+		return ((2*n-1)*x*sub(n-1,x)-(n-1)*sub(n-2,x))/n;
+	}
+}
+
+26.wy5201
+
+void resolve(double a,double b,double c);
+
+void resolve(double a,double b,double c)
+{
+	double d,e,f;
+	e=sqrt(b*b-4*a*c);
+	printf("output:\n");
+	if((b*b-4*a*c)<0)
+	{
+		printf("无实数根\n");
+	}
+	if((b*b-4*a*c)==0)
+	{
+		d=b/(-2*a);
+		printf("%.2f\n",d);
+	}
+	if((b*b-4*a*c)>0)
+	{
+		d=(-b+e)/(2*a);
+		f=(-b-e)/(2*a);
+		printf("%.2f %.2f\n",d,f);
+	}
+}
+
+27.wy5202
+
+int IsShuShu(int x);
+
+int IsShuShu(int x)
+{
+	int i;
+	for(i=2;i<x;i++)
+	{
+		if(x%i==0)
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+
+30.LB7203
+
+head=(struct node*)malloc(sizeof(struct node));
+	scanf("%d ",&a.data);
+	head=&a;
+	scanf("%d ",&b.data);
+	a.next=&b;
+	scanf("%d",&c.data);
+	b.next=&c;
+	c.next=NULL;
+
+
+
+30.LB7301
+
+
+struct node*head,*p,*rear;
+int x;
+head=(struct node*)malloc(sizeof(struct node));
+head->next=NULL;
+rear=head;
+scanf("%d",&x);
+while(x!=0)
+{
+	p=(struct node*)malloc(sizeof(struct node));
+	p->data=x;
+	p->next=NULL;
+	rear->next=p;
+	rear=p;
+	scanf("%d",&x);
+}
+return head->next;
+
+
+31.LB5201
+
+for(i=0;i<TOTAL_STU;i++)
+	{
+		for(j=0;j<7;j++)
+		{
+			scanf("%d",&student[i][j]);
+		}
+	}
+
+
+float aver(int (*pStu)[7],int stuNo)
+{
+	int i,j,flag=0;
+	float average=0;
+	int sum=0;
+	for(i=0;i<TOTAL_STU;i++)
+	{
+		for(j=1;j<7;j++)
+		{
+			if(pStu[i][0]==stuNo)
+			{
+				sum+=pStu[i][j];
+				average=(float)sum/6;
+				flag=1;
+			}
+		}
+	}
+	if(flag==0)
+	{
+		average=NOT_FIND;
+	}
+	return average;
+
+}
+
+
+34.wy5204
+
+
+int n=0;
+int i,stat,le;
+char c;
+words[0]=str;
+stat=0;
+le=strlen(str);
+for(i=0;i<le;i++)
+{
+	c=str[i];
+	if(c==' '||c=='.')
+	{
+		str[i]='\0';
+		stat=1;
+	}
+	else if(stat==1)
+	{
+		words[++n]=&str[i];
+		stat=0;
+	}
+}
+return n+1;
+
+
+int i,j;
+const char*t;
+for(i=0;i<count-1;i++)
+{
+	for(j=0;j<count-i-1;j++)
+	{
+		if(strcmp(strs[j],strs[j+1])>0)
+		{
+			t=strs[j];
+			strs[j]=strs[j+1];
+			strs[j+1]=t;
+		}
+	}
+}
+
+
+55.wy5205
+这样写只能的10%
+
+double Resolve(double a,double b,double c,double d)
+{
+	double x=1;
+	while(fabs(a*x*x*x+b*x*x+c*x+d)>1e-6)
+	{
+		x=x-(a*x*x*x+b*x*x+c*x+d)/(3*a*x*x+2*b*x+c);
+	}
+	return x;
+}

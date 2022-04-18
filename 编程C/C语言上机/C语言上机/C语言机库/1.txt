@@ -1,0 +1,159 @@
+1,输入十进制数，输出该数的十六进制数
+  int main(void)
+{
+	int n;
+	printf("input:");
+	scanf("%d", &n);
+	printf("output:%X\n", n);
+ 
+	return 0;
+}
+2输入实型数据a,b，然后输出a、b的值
+int main(void)
+{
+	double number1, number2;
+ 
+	printf("please input two numbers:");
+	scanf("%lf,%lf", &number1, &number2);
+	printf("Output:\n");
+	printf("a=%f,b=%f\n", number1, number2);
+	return 0;
+}
+3 输入一个小写英文字母，首先输出它及其ASCII码,然后输出其对应的大写字母及其ASCII
+int main(void)
+{
+	char ch;
+ 
+	printf("Input a lowercase letter:");
+	ch = getchar();
+ 
+	printf("Output:\n");
+	printf("%c(%d)\n", ch, ch);
+	printf("%c(%d)\n", ch - 32, ch - 32);
+	return 0;
+}
+4.键盘输入一个正三角形的边长（整型），计算该三角形的面积和周长
+#include <math.h>
+ 
+int main(void)
+{
+	int side;
+	printf("Input a side of triangle: ");
+	scanf("%d", &side);
+	printf("Output:\n");
+	printf("The area of triangle is %.2f, the circle of triangle is %.0f.\n", 1.0 * side * side * sqrt(3) / 4, 3.0 * side);
+	return 0;
+}
+5.从键盘读入一个任意字符，输出该字符ASCII的十六进制小写值
+int main(void)
+{
+	char ch;
+	
+	printf("Input a character: ");
+	ch = getchar();
+ 
+	printf("Output:%x\n", ch);
+	return 0;
+}
+6.从键盘输入一个正方体的边长（整型），计算该正方体的体积和表面积
+ int main(void)
+{
+	int side;
+ 
+	printf("Input a side of cube: ");
+	scanf("%d", &side);
+	printf("Output:\nThe volume of cube is %d, the surface area of cube is %d.\n", side * side * side, 6 * side * side);
+	return 0;
+}
+7.从键盘输入x+z%3*(int)(x+y)%2/4
+ int main(void)
+{
+	int float_z;
+	double float_x, float_y;
+ 
+	printf("please input x,y,z:");
+	scanf("%lf,%lf,%d", &float_x, &float_y, &float_z);
+	printf("Output:");
+	printf("%f\n", float_x + float_z % 3 * (int)(float_x + float_y) % 2 / 4);
+	return 0;
+}
+8.从键盘输入一日期，年月日之间以"-"分隔，并以同样的形式但以“/”作分隔符输出
+ int main(void)
+{
+	int year, month, day;
+ 
+	printf("please input a data:");
+	scanf("%d-%d-%d", &year, &month, &day);
+	printf("Output:\n");
+	printf("the date is:%d/%d/%d\n", year, month, day);
+	return 0;
+}
+9键盘上输入一个四位整数，计算各个位上的数字之和
+int main(void)
+{
+	int number;
+ 
+	printf("Input a number with 4-digit: ");
+	scanf("%d", &number);
+	printf("Output:\n");
+	printf("sum=%d\n", number / 1000 + number / 100 % 10 + number / 10 % 10 + number % 10);
+	return 0;
+}
+10.已知某产品单价是30 ，输入其数量是num，输出其总价
+int main(void)
+{
+	int num;
+ 
+	printf("please input num:");
+	scanf("%d", &num);
+ 
+	printf("Output:\ntotal=%d\n", 30 * num);
+	return 0;
+}
+11入两个整数，输出这两个整数的和（每个数占4位宽，+和=左右均无空格
+int main(void)
+{
+	int number1, number2;
+ 
+	printf("please input data: ");
+	scanf("%d%d", &number1, &number2);
+	printf("Output:\n");
+	printf("%4d+%4d=%4d\n", number1, number2, number1 + number2);
+	return 0;
+}
+12用scanf输入圆半径r，圆柱高h，求圆周长C1(＝2πr)、圆面积S(＝πr2)、圆柱体积V(＝πr2h)。
+int main(void)
+{
+	double rad, high, c1, s, ver;
+ 
+	printf("Input: ");
+	scanf("r=%lf,h=%lf", &rad, &high);
+	c1 = 2 * rad * 3.14;
+	s = 3.14 * rad * rad;
+	ver = s * high;
+	printf("Output:\n");
+	printf("C1=%.2f\n", c1);
+	printf("S=%.2f\n", s);
+	printf("V=%.2f\n", ver);
+	return 0;
+}
+13,输入一个华氏温度，要求输出摄氏温度，计算公式为c=5(F-32)/9
+nt main(void)
+{
+	double cel, fra;
+	
+	printf("Input the degree:");
+	scanf("%lf", &fra);
+	cel = 5 * (fra - 32) / 9;
+	printf("Output:\n");
+	printf("F(%.2f)=C(%.2f)\n", fra, cel);
+	return 0;
+}
+14.
+
+
+
+
+
+
+

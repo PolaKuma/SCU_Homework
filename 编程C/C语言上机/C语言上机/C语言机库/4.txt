@@ -1,0 +1,38 @@
+ 
+ 
+转化
+输入1个10进制整数，依次输出每一个数的八进制和十六进制表示。
+#include <stdio.h>
+int main() 
+{
+ 
+        int n;
+		printf("Input: ");
+ 
+       
+ 
+                scanf("%d", &n);
+				printf("Output:\n");
+ 
+                if (n < 0) {
+ 
+                        printf("-%o -%x\n", -n, -n);
+ 
+                } else {
+ 
+                        printf("%o %x\n", n, n);
+ 
+                }
+ 
+        
+ 
+        return 0;
+ 
+}
+     <input name="DefaultFileName" type="hidden" id="DefaultFileName" value="main.c.7da0b1d51ef146788d5ed70364139479|" />
+     <input name="HidEnviromentID" type="hidden" id="HidEnviromentID" value="0" />
+     <input name="HidSTRDID" type="hidden" id="HidSTRDID" value="3d1f54e7461a48e1b2efcca794a67dde" />
+     <input name="HidCurPluginsVersion" type="hidden" id="HidCurPluginsVersion" value="2" />
+     </form>
+</body>
+</html>

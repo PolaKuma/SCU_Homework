@@ -1,0 +1,111 @@
+ 
+ 
+1. 点的距离
+实现计算两个点之间的距离。要求：输入两个点的坐标，输出两个点之间的距离
+include <stdio.h>
+#include <math.h>
+int main()
+ {
+    int t;
+    int ax, ay, bx, by;
+    printf("Plseae input ax,ay bx,by:");
+	scanf("%d,%d %d,%d",&ax,&ay,&bx,&by);
+	printf("Output:\nThe distance from a to b is:%.2f.\n",sqrt((ax-bx)*(ax-bx)+(ay-by)*(ay-by)));
+    return 0;
+}
+2.运算符的使用
+给定变量a的初始值，计算进行如下赋值表达式计算之后a的值：a*=2+3>输入格式>只有一行，包含一个整数a。>输出<>输出题目描述中表达式运算后a的值。注意行尾输出换行。
+#include <stdio.h>
+int main() 
+{
+ 
+        int a;
+		printf("Input: ");
+ 
+        scanf("%d", &a);
+		printf("Output:\n");
+ 
+        a *= 2 + 3;
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}
+3.运算符的运用
+给定变量a的初始值，计算进行如下赋值表达式计算之后a的值：a-=2输入格式只有一行，包含一个整数a。输出输出题目描述中表达式运算后a的值。注意行尾输出换行
+#include <stdio.h>
+int main()
+ {
+ 
+        int a;
+		printf("Input: ");
+ 
+ 
+        scanf("%d", &a);
+		printf("Output:\n");
+ 
+        a -= 2;
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}
+4.运算符的运用
+给定变量a的初始值，计算进行如下赋值表达式计算之后a的值：a/=a+a输入格式只有一行，包含一个整数a。输出输出题目描述中表达式运算后a的值。注意行尾输出换行。
+#include <stdio.h>
+int main() 
+{
+ 
+        int a;
+		printf("Input: ");
+ 
+        scanf("%d", &a);
+		printf("Output:\n");
+ 
+        a /= a + a;
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}
+5.运算符的使用
+给定变量a的初始值以及n的值，计算进行如下赋值表达式计算之后a的值a%=(n%=2)输入格式只有一行，包含两个整数a和n，用空格隔开。输入保证n为奇数。输出输出题目描述中表达式运算后a的值。注意行尾输出换行。
+#include <stdio.h>
+int main() 
+{
+ 
+        int a, n;
+        printf("Input a,n: ");
+ 
+        scanf("%d %d", &a, &n);
+		printf("Output:\n");
+ 
+        a %= (n %= 2);
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}
+6.运算符的使用
+给定变量a的初始值，计算进行如下赋值表达式计算之后a的值：a+=a-=a*=a输入格式只有一行，包含一个整数a。输出题目描述中表达式运算后a的值。注意行尾输出换行。
+#include <stdio.h>
+int main() 
+{
+ 
+        int a;
+		printf("Input: ");
+ 
+        scanf("%d", &a);
+		printf("Output:\n");
+ 
+        a += a -= a *= a;
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}

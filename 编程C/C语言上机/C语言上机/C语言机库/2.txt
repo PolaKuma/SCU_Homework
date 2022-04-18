@@ -1,0 +1,378 @@
+1. 成都信息工程学院又要发年终大奖了!这次获大奖的人从n名会员中按以下规则选出:首先,让会员们围成一个大圈,按0,1,2...n-1编号。然后,随机抽取一个数m,让编号为名会员中按以下规则选出：
+ #include <stdio.h>
+int LastRemaining_Solution2(int n, unsigned int m)
+{
+	int lastinteger=0;
+	int i = 2  ;
+	if(n <= 0 || m < 0)
+		return -1;
+	for (i = 2; i <= n; i ++) 
+		lastinteger = (lastinteger + m) % i;
+	return lastinteger;
+}
+ 
+int main()
+{
+        int a,b;
+		printf("the number of people:");
+		scanf("%d",&a);
+		printf("the lucky number is:");
+		scanf("%d",&b);
+		printf("Output:\nthe lucky one's number is:");
+        while((a&&b)!=EOF)
+		{
+			printf("%d\n",LastRemaining_Solution2(a,b));
+			break;
+		}
+        return 0;
+}
+2.输入项数n(0&lt;n&lt;1000),计算数列1-1/2+1/3-1/4+.....+1/n&nbsp;的和,如图所示：
+ 
+int main() 
+{ 
+	float sum,term,deno,sign,n;
+	printf("Please input n:\n");
+	scanf("%f",&n);	
+	sum=1;
+	deno=2;
+	sign=1;
+	printf("Output:\n");
+	if(n<=0)
+	{
+		printf("Input error!\n");
+		return 0;
+	}
+	while(deno<=n)
+	{
+		sign=sign*(-1);
+		term=sign*(1/deno);
+		sum=sum+term;
+		deno++;
+	}
+	printf("the ans is %.2f\n",sum);
+    return 0; 
+}
+3.
+#include<stdio.h>
+ 
+long f(int n)
+{
+        if(n==1)
+                return 2;
+        return f(n-1)*3+2;
+}
+ 
+int main()
+{
+        int n;
+		printf("Please input n:\n");
+		scanf("%d",&n);
+		printf("Output:\nthe times are:\n");
+        while(n!=EOF)
+		{
+			printf("%lld\n",f(n));
+			break;
+		}
+        return 0;
+}
+4.小明是个爱锻炼的好孩子，每天早晨他都会去自己家附近的一个公园晨跑。这个公园里有若干个花坛，这些花坛由一些小路连接。一天，小明在跑步的过程中突然想到这样一个问题：如果自己可以选择从任何一个花坛开始，想跑步经过每一条小路，每条路至少经过一次，最后必须再回到开始时的花坛，那么最短的跑步路程是多长？
+#include <stdio.h>
+#include <string.h>
+ 
+#define inf 1000000000
+ 
+int n, l, g[16][16], deg[16], odd[16], flag[16];
+ 
+int dfs() 
+{
+        int i, j, t, r = inf;
+        for (i = 0; i < l; i++)
+                if (!flag[i])
+                        break;
+        if (i == l)
+                return 0;
+        flag[i] = 1;
+        for (j = i + 1; j < l; j++)
+                if (!flag[j])
+				{
+                        flag[j] = 1;
+                        t = dfs() + g[odd[i]][odd[j]];
+                        r = r < t ? r : t;
+                        flag[j] = 0;
+                }
+        flag[i] = 0;
+        return r;
+}
+ 
+int main() 
+{
+        int m, i, j, k, s, e, v, d;
+		printf("请输入花坛的个数:\n");
+		scanf("%d", &n);
+        while (n!= EOF, n)
+		{
+			printf("请输入小路的个数:\n");
+                scanf("%d", &m);
+                for (i = 1; i <= n; i++)
+                        for (j = 1; j <= n; j++)
+                                g[i][j] = inf;
+                memset(deg, 0, sizeof(deg));
+				printf("输入各小路的关系:\n");
+                for (d = i = 0; i < m; i++) 
+				{
+                        scanf("%d%d%d", &s, &e, &v);
+                        deg[s]++;
+                        deg[e]++;
+                        d += v;
+                        if (v < g[s][e])
+                                g[s][e] = g[e][s] = v;
+                }
+                for (k = 1; k <= n; k++)
+                        for (i = 1; i <= n; i++)
+                                for (j = 1; j <= n; j++)
+                                        if (g[i][k] + g[k][j] < g[i][j])
+                                                g[i][j] = g[i][k] + g[k][j];
+                for (l = 0, i = 1; i <= n; i++)
+                        if (deg[i] % 2)
+                                odd[l++] = i;
+                memset(flag, 0, sizeof(flag));
+				printf("Output:\n");
+				printf("最短路程为:\n");
+                printf("%d\n", d + dfs());
+				break;
+        }
+        return 0;
+}
+5.迷障小明正在玩游戏，他控制的角色正面临着幽谷的考验——幽谷周围瘴气弥漫，静的可怕，隐约可见地上堆满了骷髅。由于此处长年不见天日，
+导致空气中布满了毒素，一旦吸入体内，便会全身溃烂而死。幸好小明早有防备，提前备好了解药材料（各种浓度的万能药水）。
+现在只需按照配置成不同比例的浓度。现已知小明随身携带有19;种浓度的万能药水，体积都相同，浓度则分别为。并且
+知道，针对当时幽谷的瘴气情况，只需选择部分或者全部的万能药水，然后配置出浓度不大于9;的药水即可解毒。
+现在的问题是：如何配置此药，能得到最大体积的当前可用的解药呢？特别说明：由于幽谷内设备的限制只允许把一种已有的药全部混
+入另一种之中（即：不能出现对一种药只取它的一部分这样的操作）。输入格式<输入数据的第一行是一个整数;"表示测试数据的组数；
+:宋体">每组测试数据包含行，首先一行给出三个正整数9;
+#include<stdlib.h>
+ 
+int cmp(const void *a,const void *b)
+{
+        return *((int*)a)-*((int*)b);
+}
+ 
+int main()
+{
+        int i,n,v,w,cnt;
+        double now;
+        int as[109],cas;
+		printf("测试数据的组数:\n");
+        scanf("%d",&cas);
+        while( cas-- )
+		{
+			printf("万能药水的种数和体积:\n");
+                scanf("%d%d",&n,&v);
+				printf("解药的最大浓度:\n");
+				scanf("%d",&w);
+                now=0;
+                cnt=0;
+                for( i=0; i<n; i++ )
+				{
+					printf("第%d种药水的浓度:\n",i+1);
+                        scanf("%d",as+i);
+				}
+                qsort(as,n,sizeof(as[0]),cmp);
+                for( i=0; i<n; i++ )
+				{
+                        if( now+as[i] > (cnt+1)*w )
+                                break;
+                        else
+                                now+=as[i],cnt++;
+                }
+                if( cnt )
+                now=now/cnt/100;
+				printf("Output:\n");
+				printf("解药的最大体积解药的浓度:\n");
+                printf("%d %.2lf\n",cnt*v,now);
+				printf("\n");
+        }
+        return 0;
+}
+6.求上网
+	
+#include <stdio.h>
+ 
+int main() 
+{
+        int n, i;
+        double x[100], y[100], r[100], a, b;
+		printf("请输入WIFI热点的个数n:\n");
+		scanf("%d", &n);
+        while (n!= EOF, n) 
+		{
+			printf("请输入x,y,r:\n");
+                for (i = 0; i < n; i++)
+                        scanf("%lf%lf%lf", &x[i], &y[i], &r[i]);
+				printf("请输入a,b:\n");
+                scanf("%lf%lf", &a, &b);
+                for (i = 0; i < n; i++) 
+				{
+                        if ((a - x[i]) * (a - x[i]) + (b - y[i]) * (b - y[i]) <= r[i]
+                                        * r[i])
+                                break;
+                }
+				printf("Output:\n");
+                puts(i < n ? "YES" : "NO");
+				break;
+        }
+        return 0;
+}
+7.计算温度
+	输入一个华氏温度，输出摄氏温度。公式为：c=(5)/(9)(F-32)
+#include <stdio.h>
+ 
+#include <math.h>
+ 
+#define PI 3.14159265358
+ 
+int main() {
+ 
+        float F, c;
+		printf("Input F: ");
+ 
+        scanf("%f", &F);
+		printf("Output:\n");
+ 
+        c = 5.0 / 9.0 * (F - 32);
+ 
+        printf("%.2f\n", c);
+ 
+        return 0;
+ 
+}
+8.简单计算
+求以下算术表达式的值：x+a%3*(int)(x+y)%2/4/只有一行，包含三个数x，a，y，用空格隔开。其中x和y是浮点数，a是整数。
+#include <stdio.h>
+ 
+int main()
+ {
+ 
+        double x, y, ans;
+ 
+        int a;
+		printf("Input x,a,y: ");
+ 
+        scanf("%lf %d %lf", &x, &a, &y);
+		printf("Output:\n");
+		printf("The ans is ");
+ 
+        ans = x + a % 3 * (int)(x + y) % 2 / 4;
+ 
+        printf("%.6f\n", ans);
+ 
+        return 0;
+ 
+}
+9.不容易系列之一一个人做错一道选择题并不难，难的是全部做错，一个不对不幸的是，这种小概率事件又发生了，而且就在我们身边：事情是这样的——HDU有个网名叫做8006的男性同学，结交网友无数，最近该同学玩起了浪漫，同时给n个网友每人写了一封信，这都没什么，要命的是，他竟然把所有的信都装错了信封！注意了，是全部装错哟！现在的问题是：请大家帮可怜的8006同学计算一下，一共有多少种可能的错误方式呢？>输入数据包含多个多个测试实例，每个测试实例占用一行，每行包含一个正整数n（n表示8006的网友的人数">对于每行输入请输出可能的错误方式的数量，每个实例的输出占用一行
+include<stdio.h>
+int main()
+{
+        long a[21]={0,0,1};
+        int n,i;
+        for(i=3;i<=20;i++)
+                a[i]=(i-1)*a[i-1]+(i-1)*a[i-2];
+		printf("Please input the number of friends:\n");
+ 
+        while((scanf("%d",&n)!=EOF)&&n<=20&&n>0)
+		{
+			printf("Output:\n");
+                printf("%lld\n",a[n]);
+				break;
+		}
+		if(n>20||n<0)
+    {
+                        printf("Output:\n");
+			printf("input error!\n");
+		}
+		
+        return 0;
+}
+10.对a计算
+定变量a的初始值，计算进行如下赋值表达式计算之后a的值：a+=a-=a*=a&nbsp;输入格式只有一行，包含一个整数a。输出<>输出题目描述中表达式运算后a的值。注意行尾输出换行。/p>
+#include <stdio.h>
+int main() {
+        int a;
+		printf("Input:\n");
+        scanf("%d", &a);
+        a += a -= a *= a;
+        printf("Output:\n%d\n", a);
+        return 0;
+}
+12.简单计算题目描述</h3><p><p>求以下算术表达式的值：(float)(a+b)/2+(int)x%(int)y只有一行，包含四个数a，b，x，y，用空格隔开。
+其中x和y是浮点数，a和b是整数。&nbsp;</p><p>&nbsp;</p><h3>输出</h3><p><p>输出题目描述中表达式的值并保留6位小数。注意行尾输出换行。
+include <stdio.h>
+ 
+int main() 
+{
+ 
+        float x, y, ans;
+ 
+        int a, b;
+        printf("Input: ");
+ 
+        scanf("%d %d %f %f", &a, &b, &x, &y);
+	printf("Output:\n");
+ 
+        ans = (float)(a + b) / 2 + (int)x % (int)y;
+ 
+        printf("The ans is %.6f\n", ans);
+ 
+        return 0;
+}
+13.心的小明
+题目描述>明是一个粗心的孩子，在做加法题时他总是忘记会忘记十进制法则。
+#include <stdio.h>
+ int a,b;
+ 
+void run()
+{
+        int c,k;
+        c=a+b;
+		printf("\nOutput:\nthe right answer is:\n");
+        printf("%d ",c);
+        k=1;
+        while(k<=a||k<=b)
+        {
+                if(a/k%10+b/k%10>9)
+                        c-=k*10;
+                k*=10;
+        }
+		printf("\n\nOutput:\nthe wrong answer is:\n");
+        printf("%d\n",c);
+}
+ 
+int main()
+{
+	printf("please input two numbers:\n");
+        while(scanf("%d%d",&a,&b)!=EOF)
+		{
+			run();
+			break;
+		}
+        return 0;
+}
+11.简单计算给定变量a的初始值，计算进行如下赋值表达式计算之后a的值a+=a
+#include <stdio.h>
+ 
+int main() {
+ 
+        int a;
+		printf("Input: ");
+ 
+        scanf("%d", &a);
+		printf("Output:\n");
+ 
+        a += a;
+ 
+        printf("%d\n", a);
+ 
+        return 0;
+ 
+}
+
