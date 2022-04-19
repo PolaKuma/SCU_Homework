@@ -3,6 +3,8 @@
 
 欢迎自取，也欢迎补充不同老师的课程资料，做成一个作业库。
 
+If it helps, leave your star~
+
 Including:
 
 思想道德修养与法律基础 【李世红】
