@@ -1,0 +1,8 @@
+﻿  main.cpp
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(29,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(36,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(37,63): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(38,64): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(39,64): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+\\Mac\Home\Downloads\编程C++\五子棋\五子棋\main.cpp(40,65): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  五子棋.vcxproj -> \\Mac\Home\Downloads\编程C++\五子棋\x64\Debug\五子棋.exe
